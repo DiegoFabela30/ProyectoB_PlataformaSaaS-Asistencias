@@ -1,14 +1,8 @@
-# InterfazBase - G.A.M.A. SOLUTIONS (Web: Laravel)
+# Proyecto B: Plataforma SaaS de Gestión de Asistencias y Cumplimiento Académico.S
 <img width="1891" height="870" alt="image" src="https://github.com/user-attachments/assets/b50e0800-2acc-46df-a88b-11545f24b69e" />
 
 ## Descripción General
-**InterfazBase** es el núcleo visual y estructural para el desarrollo de aplicaciones web dentro de GAMA Solutions. Este repositorio define un **framework interno basado en Laravel** que estandariza la construcción de interfaces, promoviendo:
-- Consistencia visual  
-- Reutilización de componentes  
-- Escalabilidad de proyectos  
-- Rapidez en el desarrollo  
 
-Está diseñado para servir como base en múltiples sistemas empresariales bajo una misma identidad de marca.
 
 ## Equipo Responsable
 
@@ -16,19 +10,6 @@ Sólo el Líder del Departamento y Desarrollador UX/UI tiene permitido hacer cam
 
 - **Líder de Desarrollo Web:** Rubén Alejandro Nolasco Ruiz  
 - **Desarrollador UX/UI:** Diego Miguel Hernández Fabela  
-
----
-
-## Objetivo del Proyecto
-
-Establecer una base sólida para el desarrollo de aplicaciones web que soporten distintas soluciones:
-
-- **Proyecto A: Sistema de Control de Aulas e Itinerarios Institucionales.**
-- **Proyecto B: Plataforma SaaS de Gestión de Asistencias y Cumplimiento Académico.S)**
-- **Proyecto C: Sistema de Control de Accesos y Registro de Visitantes.**
-
-Todo bajo una arquitectura unificada y reutilizable.
-
 ---
 
 ## Stack Tecnológico (Web)
