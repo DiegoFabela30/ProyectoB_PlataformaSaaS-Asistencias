@@ -1,0 +1,596 @@
+/*
+==========================================================================
+G.A.M.A Solutions - Edición Administrativa Styles
+Proyecto B: Control de Asistencias — RF-14
+Paleta Institucional Azul Corporativo
+==========================================================================
+*/
+
+/* ========================================
+   Variables (hereda de gama-login.css)
+   Se repiten aquí por si el módulo se
+   carga de forma independiente.
+======================================== */
+:root {
+    --deep-blue:    #134474;
+    --royal-blue:   #1E5A8A;
+    --soft-steel:   #5F86A6;
+    --ice-blue:     #F2F7FB;
+    --mist-blue:    #E3EDF5;
+    --corp-orange:  #F28B2C;
+    --deep-orange:  #D96A10;
+    --error-red:    #FF0000;
+    --dark-graphite:#545454;
+    --midnight:     #1F2A35;
+    --font-main:    'Instrument Sans', sans-serif;
+    --radius-sm:    6px;
+    --radius-md:    8px;
+    --radius-lg:    12px;
+}
+
+/* ========================================
+   Page Header
+======================================== */
+.page-header {
+    margin-bottom: 28px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    margin: 0 0 4px;
+}
+
+.header-text p {
+    font-size: 16px;
+    color: var(--soft-steel);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ========================================
+   Badges
+======================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-lg);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-main);
+}
+
+.badge-warning {
+    background: #FFF3CD;
+    color: #856404;
+}
+
+.badge-success {
+    background: #D4EDDA;
+    color: #155724;
+}
+
+.badge-danger {
+    background: #F8D7DA;
+    color: #721C24;
+}
+
+/* ========================================
+   Alerts
+======================================== */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-family: var(--font-main);
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background: #D4EDDA;
+    color: #155724;
+    border-left: 4px solid #28A745;
+}
+
+.alert-error {
+    background: #F8D7DA;
+    color: #721C24;
+    border-left: 4px solid var(--error-red);
+}
+
+/* ========================================
+   Info / Warning Banners (dentro de cards)
+======================================== */
+.info-banner,
+.warning-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: var(--font-main);
+    margin-bottom: 20px;
+}
+
+.info-banner {
+    background: var(--ice-blue);
+    color: var(--royal-blue);
+    border-left: 4px solid var(--deep-blue);
+}
+
+.warning-banner {
+    background: #FFF3CD;
+    color: #856404;
+    border-left: 4px solid var(--corp-orange);
+}
+
+/* ========================================
+   Admin Tabs
+======================================== */
+.admin-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--mist-blue);
+    margin-bottom: 24px;
+}
+
+.admin-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    background: none;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--soft-steel);
+    cursor: pointer;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    transition: all 0.2s ease;
+}
+
+.admin-tab:hover {
+    color: var(--deep-blue);
+    background: var(--ice-blue);
+}
+
+.admin-tab.active {
+    color: var(--deep-blue);
+    border-bottom-color: var(--deep-blue);
+    font-weight: 700;
+}
+
+/* ========================================
+   Tab Panels
+======================================== */
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* ========================================
+   Cards
+======================================== */
+.card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--mist-blue);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--mist-blue);
+    flex-wrap: wrap;
+    gap: 12px;
+    background: var(--ice-blue);
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    padding: 20px 24px;
+}
+
+/* ========================================
+   Search Bar
+======================================== */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--soft-steel);
+    font-size: 14px;
+}
+
+.search-input {
+    padding: 8px 14px 8px 36px;
+    background: #fff;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--dark-graphite);
+    width: 220px;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--corp-orange);
+    box-shadow: 0 0 0 3px rgba(242,139,44,0.15);
+}
+
+/* ========================================
+   Filter Select
+======================================== */
+.filter-select {
+    padding: 8px 14px;
+    background: #fff;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--dark-graphite);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--corp-orange);
+}
+
+/* ========================================
+   Table
+======================================== */
+.table-container {
+    overflow-x: auto;
+}
+
+.dynamic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-main);
+    font-size: 14px;
+}
+
+.dynamic-table thead th {
+    background: var(--deep-blue);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.dynamic-table tbody tr {
+    border-bottom: 1px solid var(--mist-blue);
+    transition: background 0.15s;
+}
+
+.dynamic-table tbody tr:hover {
+    background: var(--ice-blue);
+}
+
+.dynamic-table tbody td {
+    padding: 14px 16px;
+    color: var(--dark-graphite);
+    vertical-align: middle;
+}
+
+.action-cell {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* ========================================
+   Alumno Cell (avatar + nombre)
+======================================== */
+.alumno-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-sm {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--deep-blue);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--font-main);
+}
+
+/* ========================================
+   Status Pills
+======================================== */
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-lg);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    white-space: nowrap;
+}
+
+.status-active   { background: #D4EDDA; color: #155724; }
+.status-absent   { background: #F8D7DA; color: #721C24; }
+.status-pending  { background: #FFF3CD; color: #856404; }
+.status-inactive { background: #E2E3E5; color: #383D41; }
+
+/* ========================================
+   Inputs inline en tabla
+======================================== */
+.input-select,
+.input-text {
+    padding: 7px 10px;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-main);
+    font-size: 13px;
+    color: var(--dark-graphite);
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.input-select:focus,
+.input-text:focus {
+    outline: none;
+    border-color: var(--corp-orange);
+    box-shadow: 0 0 0 2px rgba(242,139,44,0.15);
+}
+
+.input-text {
+    width: 200px;
+}
+
+/* ========================================
+   Progress Mini (barra en tabla)
+======================================== */
+.progress-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.progress-bar-mini {
+    height: 8px;
+    border-radius: 4px;
+    background: #28A745;
+    flex: 1;
+    max-width: 80px;
+    transition: width 0.3s;
+}
+
+.progress-bar-mini.progress-risk {
+    background: var(--corp-orange);
+}
+
+/* ========================================
+   Buttons
+======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-sm  { padding: 7px 14px; font-size: 13px; height: 34px; }
+.btn-md  { padding: 12px 24px; font-size: 15px; height: 44px; }
+
+.btn-primary {
+    background: var(--deep-blue);
+    color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+    background: var(--corp-orange);
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: #DC3545;
+    color: #fff;
+}
+.btn-danger:hover:not(:disabled) {
+    background: #C82333;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--deep-blue);
+    color: var(--deep-blue);
+}
+.btn-outline:hover {
+    border-color: var(--corp-orange);
+    color: var(--corp-orange);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ========================================
+   Modal
+======================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(19,68,116,0.18);
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal-md { max-width: 480px; }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--mist-blue);
+    background: var(--ice-blue);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    margin: 0 0 4px;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: var(--soft-steel);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--soft-steel);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s;
+}
+
+.modal-close:hover { color: var(--error-red); }
+
+.modal-body {
+    padding: 20px 24px;
+    font-size: 15px;
+    color: var(--dark-graphite);
+    line-height: 1.6;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--mist-blue);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-tabs {
+        flex-wrap: wrap;
+    }
+
+    .admin-tab {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .input-text {
+        width: 130px;
+    }
+
+    .search-input {
+        width: 160px;
+    }
+
+    .modal-md {
+        max-width: 95vw;
+        margin: 0 10px;
+    }
+}

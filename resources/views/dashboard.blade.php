@@ -10,13 +10,14 @@
  * @mantenimiento  Ghael Garcia Manjarrez 
  * @version        1.0.0
  * @creado         11/04/2026
- * @modificado     11/04/2026
+ * @modificado     07/05/2026
  *
  * @cambios
  * Fecha       | Autor             | Descripción
  * ------------|-------------------|------------------------------------------
  * 11/04/2026  | Rubén Alejandro   | Implementación inicial de Dashboard: KPIs, Gráficas y Filtros.
  * 11/04/2026  | Rubén Alejandro   | Estandarización de prólogo según manual GAMA-MPL-03.
+ * 07/05/2026  | Claude Code       | Actualización de nav-items a módulos reales Proyecto B.
  */
 --}}
 

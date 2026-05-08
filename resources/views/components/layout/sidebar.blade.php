@@ -10,13 +10,14 @@
  * @mantenimiento   Ghael Garcia Manjarrez 
  * @version       0.1.0
  * @creado        11/04/2026
- * @modificado    11/04/2026
+ * @modificado    07/05/2026
  *
  * @cambios
  * Fecha       | Autor             | Descripción
  * ------------|-------------------|------------------------------------------
  * 03/04/2026  | Rubén Alejandro   | Implementación inicial de Sidebar y Toggle móvil.
  * 11/04/2026  | Rubén Alejandro   | Ajuste de estructura de prólogo según manual GAMA-MPL-03.
+ * 07/05/2026  | Claude Code       | Actualización de nav-items a módulos reales Proyecto B.
  */
 --}}     
      
@@ -56,7 +57,7 @@
           <!-- Principal -->
           <div class="nav-section">
             <span class="nav-label">Principal</span>
-            <a href="#" class="nav-item active" data-tooltip="Dashboard">
+            <a href="{{ route('dashboard') }}" class="nav-item active" data-tooltip="Dashboard">
               <i class="fas fa-home nav-icon"></i>
               <span class="nav-text">Dashboard</span>
             </a>
@@ -65,36 +66,49 @@
           <!-- Módulos -->
           <div class="nav-section">
             <span class="nav-label">Módulos</span>
-            <a href="#" class="nav-item" data-tooltip="Reportes">
+            <a href="{{ Route::has('instituciones.index') ? route('instituciones.index') : '#' }}" class="nav-item" data-tooltip="Instituciones">
+              <i class="fas fa-building nav-icon"></i>
+              <span class="nav-text">Instituciones</span>
+            </a>
+            
+            <a href="{{ Route::has('membresias.index') ? route('membresias.index') : '#' }}" class="nav-item" data-tooltip="Membresías">
+              <i class="fas fa-id-card nav-icon"></i>
+              <span class="nav-text">Membresías</span>
+            </a>
+            
+            <a href="{{ Route::has('aulas.index') ? route('aulas.index') : '#' }}" class="nav-item" data-tooltip="Aulas">
+              <i class="fas fa-chalkboard nav-icon"></i>
+              <span class="nav-text">Aulas</span>
+            </a>
+            <a href="{{ Route::has('asistencias.docente') ? route('asistencias.docente') : '#' }}" class="nav-item" data-tooltip="Asistencias">
+              <i class="fas fa-clipboard-check nav-icon"></i>
+              <span class="nav-text">Asistencias</span>
+            </a>
+            <a href="{{ Route::has('asistencias.alumno') ? route('asistencias.alumno') : '#' }}" class="nav-item" data-tooltip="Mi Asistencia">
+              <i class="fas fa-user-check nav-icon"></i>
+              <span class="nav-text">Mi Asistencia</span>
+            </a>
+            
+            <a href="{{ Route::has('justificantes.index') ? route('justificantes.index') : '#' }}" class="nav-item" data-tooltip="Justificantes">
+              <i class="fas fa-file-alt nav-icon"></i>
+              <span class="nav-text">Justificantes</span>
+            </a>
+            <a href="{{ Route::has('reportes.index') ? route('reportes.index') : '#' }}" class="nav-item" data-tooltip="Reportes">
               <i class="fas fa-chart-bar nav-icon"></i>
               <span class="nav-text">Reportes</span>
             </a>
-            <a href="#" class="nav-item" data-tooltip="Usuarios">
-              <i class="fas fa-users nav-icon"></i>
-              <span class="nav-text">Usuarios</span>
-              <span class="badge">3</span>
+            
+            <a href="{{ Route::has('ciclo.cierre') ? route('ciclo.cierre') : '#' }}" class="nav-item" data-tooltip="Cierre de Ciclo">
+              <i class="fas fa-lock nav-icon"></i>
+              <span class="nav-text">Cierre de Ciclo</span>
             </a>
-            <a href="#" class="nav-item" data-tooltip="Campo Genérico 1">
-              <i class="fas fa-layer-group nav-icon"></i>
-              <span class="nav-text">Campo Genérico 1</span>
+            
+            
+            <a href="{{ Route::has('admin.edicion') ? route('admin.edicion') : '#' }}" class="nav-item" data-tooltip="Edición Admin">
+              <i class="fas fa-user-edit nav-icon"></i>
+              <span class="nav-text">Edición Admin</span>
             </a>
-            <a href="#" class="nav-item" data-tooltip="Campo Genérico 2">
-              <i class="fas fa-layer-group nav-icon"></i>
-              <span class="nav-text">Campo Genérico 2</span>
-            </a>
-            <a href="#" class="nav-item" data-tooltip="Campo Genérico 3">
-              <i class="fas fa-layer-group nav-icon"></i>
-              <span class="nav-text">Campo Genérico 3</span>
-            </a>
-          </div>
-
-          <!-- Configuración -->
-          <div class="nav-section">
-            <span class="nav-label">Configuración</span>
-            <a href="#" class="nav-item" data-tooltip="Ajustes">
-              <i class="fas fa-cog nav-icon"></i>
-              <span class="nav-text">Ajustes</span>
-            </a>
+            
           </div>
         </nav>
 
