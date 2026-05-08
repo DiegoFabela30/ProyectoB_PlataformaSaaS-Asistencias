@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    @stack('styles')   {{-- ← ESTA LÍNEA faltaba --}}
 </head>
 <body>
 
@@ -21,5 +23,6 @@
 
     @include('components.layout.footer')
 
+    @stack('scripts')  {{-- ← ESTA también faltaba para que funcione el JS --}}
 </body>
 </html>
