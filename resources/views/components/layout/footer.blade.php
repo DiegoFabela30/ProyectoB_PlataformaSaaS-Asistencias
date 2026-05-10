@@ -17,6 +17,8 @@
  * ------------|-------------------|------------------------------------------
  * 11/04/2026  | Rubén Alejandro   | Creación de footer institucional con gestión dinámica de año.
  * 11/04/2026  | Rubén Alejandro   | Estandarización de prólogo según manual GAMA-MPL-03.
+
+
  */
 --}}
 <footer class="dashboard-footer institutional-footer">

@@ -58,3 +58,12 @@ Route::get('/login', function () {
 Route::get('/terms', function () {
     return view('legal.terms');
 })->name('terms');
+
+Route::get('/aviso-de-privacidad', function () {
+    return view('legal.privacy');
+})->name('privacy');
+
+// Aulas (admin, docente)
+Route::get('/aulas/create', function () {
+    return view('aulas.create');
+})->name('aulas.create');

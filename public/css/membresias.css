@@ -1,8 +1,459 @@
 /*
 ==========================================================================
-G.A.M.A Solutions - Membresías Styles
-Proyecto B: Control de Asistencias
+G.A.M.A Solutions - Membresías y Suscripciones
+Proyecto B: Control de Asistencias — RF-03 / RF-12
+Paleta Institucional Azul Corporativo
 ==========================================================================
 */
 
-/* TODO: estilos del módulo */
+:root {
+    --deep-blue:    #134474;
+    --royal-blue:   #1E5A8A;
+    --soft-steel:   #5F86A6;
+    --ice-blue:     #F2F7FB;
+    --mist-blue:    #E3EDF5;
+    --corp-orange:  #F28B2C;
+    --dark-graphite:#545454;
+    --midnight:     #1F2A35;
+    --error-red:    #FF0000;
+    --font-main:    'Instrument Sans', sans-serif;
+    --radius-sm:    6px;
+    --radius-md:    8px;
+    --radius-lg:    12px;
+}
+
+/* ========================================
+   Page Header
+======================================== */
+.page-header { margin-bottom: 24px; }
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header-text h1 { font-size: 32px; font-weight: 700; color: var(--deep-blue); margin: 0 0 4px; }
+.header-text p  { font-size: 16px; color: var(--soft-steel); margin: 0; }
+.header-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+/* ========================================
+   KPI Grid
+======================================== */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.kpi-card {
+    background: #fff;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.kpi-card--success .kpi-icon { background: #D4EDDA; color: #155724; }
+.kpi-card--warning .kpi-icon { background: #FFF3CD; color: #856404; }
+.kpi-card--danger  .kpi-icon { background: #F8D7DA; color: #721C24; }
+
+.kpi-icon {
+    width: 48px; height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--ice-blue);
+    color: var(--deep-blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+}
+
+.kpi-content { display: flex; flex-direction: column; }
+.kpi-value   { font-size: 26px; font-weight: 700; color: var(--midnight); line-height: 1; margin-bottom: 4px; }
+.kpi-label   { font-size: 13px; color: var(--soft-steel); font-weight: 500; }
+
+/* ========================================
+   Tabs
+======================================== */
+.mod-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--mist-blue);
+    margin-bottom: 20px;
+}
+
+.mod-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 18px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    background: none;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--soft-steel);
+    cursor: pointer;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    transition: all 0.2s;
+}
+
+.mod-tab:hover { color: var(--deep-blue); background: var(--ice-blue); }
+.mod-tab.active { color: var(--deep-blue); border-bottom-color: var(--deep-blue); font-weight: 700; }
+
+.tab-badge {
+    background: var(--corp-orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+
+/* ========================================
+   Card
+======================================== */
+.card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--mist-blue);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--mist-blue);
+    background: var(--ice-blue);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-title { font-size: 16px; font-weight: 700; color: var(--deep-blue); display: flex; align-items: center; gap: 8px; margin: 0; }
+.card-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card-body { padding: 20px; }
+.card-body.p-0 { padding: 0; }
+
+/* ========================================
+   Search & Filter
+======================================== */
+.search-bar { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 12px; color: var(--soft-steel); font-size: 13px; }
+
+.search-input {
+    padding: 8px 14px 8px 34px;
+    background: #fff;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--dark-graphite);
+    width: 220px;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus { outline: none; border-color: var(--corp-orange); box-shadow: 0 0 0 3px rgba(242,139,44,0.15); }
+
+.filter-select {
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--dark-graphite);
+    cursor: pointer;
+}
+
+/* ========================================
+   Table
+======================================== */
+.table-container { overflow-x: auto; }
+
+.dynamic-table { width: 100%; border-collapse: collapse; font-family: var(--font-main); font-size: 14px; }
+
+.dynamic-table thead th {
+    background: var(--deep-blue);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.dynamic-table tbody tr { border-bottom: 1px solid var(--mist-blue); transition: background 0.15s; }
+.dynamic-table tbody tr:hover { background: var(--ice-blue); }
+.dynamic-table tbody td { padding: 13px 16px; color: var(--dark-graphite); vertical-align: middle; }
+
+/* ========================================
+   Institución Cell
+======================================== */
+.inst-cell { display: flex; align-items: center; gap: 10px; }
+
+.inst-icon {
+    width: 34px; height: 34px;
+    border-radius: var(--radius-md);
+    background: var(--ice-blue);
+    color: var(--deep-blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+}
+
+.inst-icon--inactive { background: #E2E3E5; color: #6C757D; }
+.inst-nombre { font-weight: 600; color: var(--midnight); font-size: 14px; }
+.inst-cell--inactive .inst-nombre { color: var(--soft-steel); }
+
+/* ========================================
+   Plan Badges
+======================================== */
+.plan-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-lg);
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-main);
+    white-space: nowrap;
+}
+
+.plan-basico   { background: var(--ice-blue);  color: var(--deep-blue); border: 1px solid var(--mist-blue); }
+.plan-estandar { background: #E8F5E9; color: #1B5E20; border: 1px solid #C8E6C9; }
+.plan-premium  { background: #FFF3E0; color: #E65100; border: 1px solid #FFE0B2; }
+
+/* ========================================
+   Fechas con color de alerta
+======================================== */
+.fecha-alerta { color: #856404; font-weight: 600; }
+.fecha-vencida { color: #721C24; font-weight: 600; }
+
+/* ========================================
+   Status Pills
+======================================== */
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-lg);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    white-space: nowrap;
+}
+
+.status-active  { background: #D4EDDA; color: #155724; }
+.status-warning { background: #FFF3CD; color: #856404; }
+.status-expired { background: #F8D7DA; color: #721C24; }
+
+/* ========================================
+   Action Buttons
+======================================== */
+.action-cell { display: flex; gap: 6px; align-items: center; }
+
+.action-btn {
+    width: 32px; height: 32px;
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--soft-steel);
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.action-btn:hover      { border-color: var(--deep-blue); color: var(--deep-blue); }
+.action-btn.warn:hover { border-color: var(--corp-orange); color: var(--corp-orange); background: #FFF3E8; }
+
+/* ========================================
+   Planes Grid (modal)
+======================================== */
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.plan-card {
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--mist-blue);
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.plan-card:hover { transform: translateY(-2px); }
+
+.plan-card--basico   { border-color: var(--mist-blue); }
+.plan-card--estandar { border-color: #A5D6A7; }
+.plan-card--premium  { border-color: #FFCC80; }
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.plan-nombre {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--deep-blue);
+}
+
+.plan-edit-btn {
+    background: none;
+    border: none;
+    color: var(--soft-steel);
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.plan-edit-btn:hover { color: var(--corp-orange); }
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--dark-graphite);
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plan-features li i { font-size: 11px; color: #28A745; }
+.feat-no { color: var(--soft-steel) !important; }
+.feat-no i { color: #DC3545 !important; }
+
+/* ========================================
+   Buttons
+======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-sm  { padding: 7px 14px;  font-size: 13px; height: 34px; }
+.btn-md  { padding: 11px 22px; font-size: 15px; height: 44px; }
+
+.btn-primary { background: var(--deep-blue); color: #fff; }
+.btn-primary:hover { background: var(--corp-orange); transform: translateY(-1px); }
+
+.btn-outline { background: transparent; border: 2px solid var(--deep-blue); color: var(--deep-blue); }
+.btn-outline:hover { border-color: var(--corp-orange); color: var(--corp-orange); }
+
+/* ========================================
+   Modales
+======================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.modal-overlay.active { display: flex; }
+.modal { background: #fff; border-radius: var(--radius-lg); width: 100%; overflow: hidden; }
+.modal-sm { max-width: 400px; }
+.modal-md { max-width: 520px; }
+.modal-lg { max-width: 680px; }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--mist-blue);
+    background: var(--ice-blue);
+}
+
+.modal-title   { font-size: 18px; font-weight: 700; color: var(--deep-blue); margin: 0 0 4px; }
+.modal-subtitle { font-size: 13px; color: var(--soft-steel); margin: 0; }
+.modal-close   { background: none; border: none; font-size: 18px; color: var(--soft-steel); cursor: pointer; padding: 4px; border-radius: var(--radius-sm); transition: color 0.2s; flex-shrink: 0; }
+.modal-close:hover { color: #DC3545; }
+.modal-body    { padding: 20px 24px; font-size: 15px; color: var(--dark-graphite); line-height: 1.6; }
+.modal-footer  { display: flex; justify-content: flex-end; gap: 10px; padding: 16px 24px; border-top: 1px solid var(--mist-blue); }
+
+/* ========================================
+   Formularios
+======================================== */
+.form-group { margin-bottom: 16px; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 0; }
+
+.form-label { display: block; font-size: 14px; font-weight: 600; color: var(--midnight); margin-bottom: 7px; }
+.required { color: var(--error-red); }
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--ice-blue);
+    border: 1px solid var(--mist-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--dark-graphite);
+    transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--corp-orange);
+    box-shadow: 0 0 0 3px rgba(242,139,44,0.15);
+}
+
+.form-textarea { resize: vertical; min-height: 70px; }
+
+/* ========================================
+   Detalle grid
+======================================== */
+.detalle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.detalle-item { display: flex; flex-direction: column; gap: 4px; }
+.detalle-item--full { grid-column: 1 / -1; }
+.detalle-label { font-size: 12px; font-weight: 600; color: var(--soft-steel); text-transform: uppercase; letter-spacing: 0.5px; }
+.detalle-value { font-size: 15px; color: var(--midnight); font-weight: 500; }
+
+/* ========================================
+   Responsive
+======================================== */
+@media (max-width: 768px) {
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .planes-grid { grid-template-columns: 1fr; }
+    .detalle-grid, .form-grid-2 { grid-template-columns: 1fr; }
+    .search-input { width: 160px; }
+}
+
+@media (max-width: 480px) {
+    .header-text h1 { font-size: 24px; }
+    .modal-lg, .modal-md, .modal-sm { max-width: 95vw; }
+    .mod-tab span:not(.tab-badge) { display: none; }
+}
